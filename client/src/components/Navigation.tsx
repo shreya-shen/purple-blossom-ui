@@ -37,7 +37,7 @@ export const Navigation = () => {
   };
 
   return (
-    <nav className="glass-effect sticky top-0 z-50 border-b border-sarang-lavender/20 dark:border-sarang-accent-purple/20">
+    <nav className="glass-effect sticky top-0 z-50 border-b border-border">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-18">
           {/* Logo */}
@@ -50,10 +50,10 @@ export const Navigation = () => {
               />
             </div>
             <div className="flex flex-col">
-              <span className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-sarang-deep-purple to-sarang-accent-purple bg-clip-text text-transparent">
+              <span className="text-2xl sm:text-3xl font-bold text-primary">
                 Sarang
               </span>
-              <span className="text-xs font-medium text-sarang-purple/70 dark:text-sarang-periwinkle/70 -mt-1">
+              <span className="text-xs font-medium text-muted-foreground -mt-1">
                 Music Therapy
               </span>
             </div>
@@ -65,14 +65,14 @@ export const Navigation = () => {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`text-sm font-semibold transition-all duration-300 hover:text-sarang-deep-purple dark:hover:text-sarang-accent-purple relative group ${
+                className={`text-sm font-semibold transition-all duration-300 hover:text-primary relative group ${
                   location.pathname === item.path
-                    ? "text-sarang-deep-purple dark:text-sarang-accent-purple"
-                    : "text-gray-700 dark:text-gray-300"
+                    ? "text-primary"
+                    : "text-foreground"
                 }`}
               >
                 {item.label}
-                <span className={`absolute -bottom-2 left-0 w-0 h-0.5 bg-gradient-to-r from-sarang-deep-purple to-sarang-accent-purple transition-all duration-300 group-hover:w-full ${
+                <span className={`absolute -bottom-2 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full ${
                   location.pathname === item.path ? "w-full" : ""
                 }`} />
               </Link>
@@ -82,19 +82,19 @@ export const Navigation = () => {
             
             {!isSignedIn ? (
               <Link to="/auth">
-                <Button className="bg-gradient-to-r from-sarang-deep-purple to-sarang-accent-purple hover:from-sarang-deep-purple/90 hover:to-sarang-accent-purple/90 text-white px-6 xl:px-8 py-2.5 rounded-full font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-sarang-purple/30 text-sm">
+                <Button className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 xl:px-8 py-2.5 rounded-lg font-semibold transition-all duration-300 text-sm">
                   Sign In
                 </Button>
               </Link>
             ) : (
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" className="relative h-10 w-10 rounded-full border-2 border-sarang-lavender dark:border-sarang-accent-purple hover:border-sarang-deep-purple dark:hover:border-sarang-periwinkle transition-colors duration-300">
+                  <Button variant="ghost" className="relative h-10 w-10 rounded-full border-2 border-border hover:border-primary transition-colors duration-300">
                     <User className="h-5 w-5" />
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-56 glass-effect border-sarang-lavender/30 dark:border-sarang-accent-purple/30" align="end" forceMount>
-                  <DropdownMenuItem className="font-normal text-gray-900 dark:text-gray-100 focus:bg-sarang-lavender/20 dark:focus:bg-sarang-accent-purple/20">
+                <DropdownMenuContent className="w-56 glass-effect border-border" align="end" forceMount>
+                  <DropdownMenuItem className="font-normal text-card-foreground focus:bg-accent">
                     <div className="flex flex-col space-y-1">
                       <p className="text-sm font-medium leading-none">
                         {user?.primaryEmailAddress?.emailAddress || user?.firstName || 'User'}
@@ -104,10 +104,10 @@ export const Navigation = () => {
                       </p>
                     </div>
                   </DropdownMenuItem>
-                  <DropdownMenuItem onClick={() => navigate('/settings')} className="text-gray-900 dark:text-gray-100 focus:bg-sarang-lavender/20 dark:focus:bg-sarang-accent-purple/20">
+                  <DropdownMenuItem onClick={() => navigate('/settings')} className="text-card-foreground focus:bg-accent">
                     Settings
                   </DropdownMenuItem>
-                  <DropdownMenuItem onClick={handleSignOut} className="text-gray-900 dark:text-gray-100 focus:bg-sarang-lavender/20 dark:focus:bg-sarang-accent-purple/20">
+                  <DropdownMenuItem onClick={handleSignOut} className="text-card-foreground focus:bg-accent">
                     <LogOut className="mr-2 h-4 w-4" />
                     <span>Log out</span>
                   </DropdownMenuItem>
@@ -136,33 +136,33 @@ export const Navigation = () => {
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <div className="lg:hidden border-t border-sarang-lavender/30 dark:border-sarang-accent-purple/30 glass-effect">
+          <div className="lg:hidden border-t border-border glass-effect">
             <div className="px-4 pt-4 pb-6 space-y-3">
               {navItems.map((item) => (
                 <Link
                   key={item.path}
                   to={item.path}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`block px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 ${
+                  className={`block px-4 py-3 rounded-lg text-base font-medium transition-all duration-300 ${
                     location.pathname === item.path
-                      ? "text-sarang-deep-purple dark:text-sarang-accent-purple bg-sarang-cream dark:bg-sarang-dark-purple/30 shadow-md"
-                      : "text-gray-700 dark:text-gray-300 hover:text-sarang-deep-purple dark:hover:text-sarang-accent-purple hover:bg-sarang-lavender/20 dark:hover:bg-sarang-accent-purple/10"
+                      ? "text-primary bg-accent shadow-md"
+                      : "text-foreground hover:text-primary hover:bg-accent/50"
                   }`}
                 >
                   {item.label}
                 </Link>
               ))}
               
-              <div className="pt-4 border-t border-sarang-lavender/30 dark:border-sarang-accent-purple/30">
+              <div className="pt-4 border-t border-border">
                 {!isSignedIn ? (
                   <Link to="/auth" onClick={() => setMobileMenuOpen(false)}>
-                    <Button className="w-full bg-gradient-to-r from-sarang-deep-purple to-sarang-accent-purple hover:from-sarang-deep-purple/90 hover:to-sarang-accent-purple/90 text-white py-3 rounded-xl font-semibold transition-all duration-300 shadow-lg">
+                    <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground py-3 rounded-lg font-semibold transition-all duration-300">
                       Sign In
                     </Button>
                   </Link>
                 ) : (
                   <div className="space-y-3">
-                    <div className="px-4 py-3 text-sm text-gray-600 dark:text-gray-300 bg-sarang-cream/50 dark:bg-sarang-dark-purple/20 rounded-xl">
+                    <div className="px-4 py-3 text-sm text-muted-foreground bg-muted rounded-lg">
                       {user?.primaryEmailAddress?.emailAddress || user?.firstName || 'User'}
                     </div>
                     <Button
@@ -171,7 +171,7 @@ export const Navigation = () => {
                         navigate('/settings');
                         setMobileMenuOpen(false);
                       }}
-                      className="w-full justify-start text-gray-600 dark:text-gray-300 hover:bg-sarang-lavender/20 dark:hover:bg-sarang-accent-purple/10"
+                      className="w-full justify-start text-foreground hover:bg-accent"
                     >
                       Settings
                     </Button>
@@ -181,7 +181,7 @@ export const Navigation = () => {
                         handleSignOut();
                         setMobileMenuOpen(false);
                       }}
-                      className="w-full justify-start text-gray-600 dark:text-gray-300 hover:bg-sarang-lavender/20 dark:hover:bg-sarang-accent-purple/10"
+                      className="w-full justify-start text-foreground hover:bg-accent"
                     >
                       <LogOut className="mr-2 h-4 w-4" />
                       Sign Out

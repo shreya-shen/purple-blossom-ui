@@ -73,27 +73,16 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Sarang custom colors - Bold and vibrant purple/lavender palette
+				// Updated color palette: #F4EBD3, #DED3C4, #98A1BC, #555879
 				sarang: {
-					cream: '#F9F6FF',
-					lavender: '#E5DEFF', 
-					periwinkle: '#C4B5FD',
-					purple: '#8B5CF6',
-					'deep-purple': '#7C3AED',
-					'light-lavender': '#F3F4F6',
-					'accent-purple': '#A855F7',
-					'dark-purple': '#6D28D9'
-				},
-				// Dark theme variants - Enhanced for better contrast
-				'dark-sarang': {
-					cream: '#1E1B4B',
-					lavender: '#312E81',
-					periwinkle: '#4C1D95',
-					purple: '#7C3AED',
-					'deep-purple': '#8B5CF6',
-					'light-lavender': '#1F2937',
-					'accent-purple': '#C084FC',
-					'dark-purple': '#5B21B6'
+					cream: '#F4EBD3',      // Light cream
+					beige: '#DED3C4',      // Warm beige
+					slate: '#98A1BC',      // Blue-gray slate
+					charcoal: '#555879',   // Dark charcoal
+					'light-cream': '#F8F3E6',
+					'dark-beige': '#D4C5B4',
+					'light-slate': '#A8B3CC',
+					'dark-charcoal': '#484764'
 				}
 			},
 			borderWidth: {

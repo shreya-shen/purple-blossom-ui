@@ -52,6 +52,10 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				hero: {
+					DEFAULT: 'hsl(var(--hero))',
+					foreground: 'hsl(var(--hero-foreground))'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -62,6 +66,23 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				}
+			},
+			fontFamily: {
+				sans: ['Inter', 'system-ui', 'sans-serif'],
+			},
+			fontSize: {
+				'hero': 'var(--font-size-hero)',
+				'display': 'var(--font-size-xl)',
+				'headline': 'var(--font-size-lg)',
+				'subheading': 'var(--font-size-md)',
+			},
+			spacing: {
+				'section': 'var(--section-padding)',
+				'container': 'var(--container-padding)',
+			},
+			boxShadow: {
+				'card': 'var(--shadow-card)',
+				'button': 'var(--shadow-button)',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

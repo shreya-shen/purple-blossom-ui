@@ -1,0 +1,130 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. */
+
+@layer base {
+  :root {
+    --background: 32 30% 98%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 262 83% 58%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 249 58% 91%;
+    --secondary-foreground: 260 84% 32%;
+
+    --muted: 249 58% 95%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 262 83% 85%;
+    --accent-foreground: 260 84% 32%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 249 58% 91%;
+    --input: 249 58% 91%;
+    --ring: 262 83% 58%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 260 5.3% 26.1%;
+    --sidebar-primary: 262 83% 58%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 249 58% 95%;
+    --sidebar-accent-foreground: 260 84% 32%;
+    --sidebar-border: 249 58% 91%;
+    --sidebar-ring: 262 83% 58%;
+  }
+
+  .dark {
+    --background: 260 84% 8%;
+    --foreground: 249 58% 98%;
+    --card: 260 84% 12%;
+    --card-foreground: 249 58% 98%;
+    --popover: 260 84% 12%;
+    --popover-foreground: 249 58% 98%;
+    --primary: 262 83% 75%;
+    --primary-foreground: 260 84% 8%;
+    --secondary: 260 84% 18%;
+    --secondary-foreground: 249 58% 98%;
+    --muted: 260 84% 18%;
+    --muted-foreground: 249 58% 65%;
+    --accent: 260 84% 18%;
+    --accent-foreground: 249 58% 98%;
+    --destructive: 0 60% 50%;
+    --destructive-foreground: 249 58% 98%;
+    --border: 260 84% 18%;
+    --input: 260 84% 18%;
+    --ring: 262 83% 75%;
+    --sidebar-background: 260 84% 8%;
+    --sidebar-foreground: 249 58% 98%;
+    --sidebar-primary: 262 83% 75%;
+    --sidebar-primary-foreground: 260 84% 8%;
+    --sidebar-accent: 260 84% 18%;
+    --sidebar-accent-foreground: 249 58% 98%;
+    --sidebar-border: 260 84% 18%;
+    --sidebar-ring: 262 83% 75%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-weight: 400;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+  }
+}
+
+@layer components {
+  .gradient-bg {
+    background: linear-gradient(135deg, #F9F6FF 0%, #E5DEFF 35%, #C4B5FD 70%, #8B5CF6 100%);
+  }
+
+  .dark .gradient-bg {
+    background: linear-gradient(135deg, #1E1B4B 0%, #312E81 35%, #4C1D95 70%, #7C3AED 100%);
+  }
+  
+  .gradient-bg-alt {
+    background: linear-gradient(120deg, #A855F7 0%, #C4B5FD 50%, #E5DEFF 100%);
+  }
+
+  .dark .gradient-bg-alt {
+    background: linear-gradient(120deg, #C084FC 0%, #4C1D95 50%, #312E81 100%);
+  }
+  
+  .mood-card {
+    @apply bg-white/90 dark:bg-gray-800/90 backdrop-blur-md border-2 border-sarang-lavender/40 dark:border-sarang-accent-purple/30 rounded-2xl p-6 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:-translate-y-1;
+  }
+
+  .hero-gradient {
+    background: linear-gradient(135deg, #F9F6FF 0%, #E5DEFF 25%, #C4B5FD 50%, #A855F7 75%, #8B5CF6 100%);
+  }
+
+  .dark .hero-gradient {
+    background: linear-gradient(135deg, #1E1B4B 0%, #312E81 25%, #4C1D95 50%, #7C3AED 75%, #C084FC 100%);
+  }
+
+  .glass-effect {
+    @apply backdrop-blur-xl bg-white/20 dark:bg-black/20 border border-white/30 dark:border-white/10;
+  }
+}
